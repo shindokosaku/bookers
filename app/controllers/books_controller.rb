@@ -1,13 +1,18 @@
 class BooksController < ApplicationController
   def new
-    
+    @book=Book.new(book_params)
   end
   
   def create
-    book=Book.new(book_params)
-    book.save
-    redirect_to book_path(book.id)
-
+    @book=Book.new(book_params)
+    if @book.save
+      flash[:notice]="Book was successfully created."
+      redirect_to book_path(@book.id)
+    else
+      flash[:notice]="・Title can't be blank<br>
+       ・Body can't be blank"
+       render :
+    end
   end
 
   def index
@@ -32,7 +37,7 @@ class BooksController < ApplicationController
   def destroy
     book=Book.find(params[:id])
     book.destroy
-    redorect_to'/books'
+    redirect_to'/books'
   end
 
   private
