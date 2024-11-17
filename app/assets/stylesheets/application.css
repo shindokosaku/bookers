@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .top-title{
+     margin: 20px 0 5px 40px;
+  }
+  .top-body{
+     margin-left:60px;
+     padding-bottom:10px;
+     line-height:3;
+  }
+  .top-atagu{
+     margin-left:60px;
+  }

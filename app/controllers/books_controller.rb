@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     else
       flash[:notice]="・Title can't be blank<br>
        ・Body can't be blank"
-       render :
+       render :new
     end
   end
 
